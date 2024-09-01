@@ -1,0 +1,32 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="{% static 'style.css' %}">
+  <title>Cactus - Viva o Jogo</title>
+
+</head>
+
+<body>
+  
+  <h1> Listar usuários </h1>
+  <ul>
+    {% for usuario in usuario_list  %}
+        <li> {{ usuario.id }}</li>
+        <li> {{ usuario.nome }} </li>
+        <li> {{ usuario.email }} </li>
+        <li> {{ usuario.senha }} </li>
+        <li> {{ usuario.foto }} </li>
+        <button> <a href=" {% url 'atualizarUser' pk=usuario.pk %}"> atualizar </a></button>
+        <button> <a href=" {% url 'deletarUser'  pk=usuario.pk %}"> deletar </a></button>
+    {% endfor %}
+  </ul>
+  <button><a href="{% url 'adicionarUser' %}"> add user </a></button>
+</body>
+</html>
+

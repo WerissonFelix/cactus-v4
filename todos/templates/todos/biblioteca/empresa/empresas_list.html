@@ -1,0 +1,35 @@
+{% load static %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="{% static 'style.css' %}">
+  <title>Cactus - Viva o Jogo</title>
+
+</head>
+
+<body>
+
+  <h1> Empresa </h1>
+  <ul>
+      {% for empresa in empresas_list %}
+        <li> id:{{ empresa.id }} </li>
+        <li> nome:{{ empresa.nome }} </li>
+        <li> email:{{ empresa.email }} </li>
+        <li> senha:{{ empresa.senha }} </li>
+        <li> jogo:{{ empresa.jogo }} </li>
+        <li> logo: {{ empresa.logo }}</li>
+        <li> desc:{{ empresa.desc }} </li>
+        <button> <a href=" {% url 'atualizarEmpresas' pk=empresa.pk %}"> atualizar </a></button>
+        <button> <a href=" {% url 'deletarEmpresas' pk=empresa.pk %}"> deletar </a></button>
+      {% endfor %}
+  </ul>
+
+  <button> <a href=" {% url 'adicionarEmpresas' %}"> adicionar </a></button>
+</body>
+</html>

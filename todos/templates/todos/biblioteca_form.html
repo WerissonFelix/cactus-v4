@@ -1,0 +1,31 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="{% static 'style.css' %}">
+  <title>Cactus - Viva o Jogo</title>
+
+</head>
+
+<body>
+  <h1> Adicionar items a biblioteca <h1>
+
+    {% if biblioteca.pk %}
+    <h1> Editar tarefa </h1>
+
+    {% else %}
+        <h1> Nova tarefa </h1>
+    {% endif %}
+    <form method="POST">
+    {% csrf_token %}
+    {{ form }}
+
+    <button type="submit">Inserir valores</button>
+    </form>
+    
+</body>
+</html>
