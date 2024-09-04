@@ -1,0 +1,34 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="{% static 'style.css' %}">
+  <title>Cactus - Viva o Jogo</title>
+
+</head>
+
+<body>
+    <div class="mamaeui">
+        <div class="imagemlegal">
+            <img src="{% static "imagens/cactuslogo-removebg-preview.png" %}">
+        </div>
+        <div class="cadastrobox">
+          <form method="POST">
+              {% csrf_token %}
+              {{ form }}
+              <input type="submit" value="cadastro">
+          </form>
+          <div class="cadastrin">
+              <a href="lolxd.html">
+                  <p>c tem cadastro</p>
+              </a>
+          </div>
+        </div>
+      </div>
+    </div>
+</body>
+</html>

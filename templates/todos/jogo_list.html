@@ -1,0 +1,39 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="{% static 'style.css' %}">
+  <title>Cactus - Viva o Jogo</title>
+
+</head>
+
+<body>
+  
+  <h1> Jogo </h1>
+
+  <ul>
+    {% if jogo.pk  %}
+    {% for jogo  in jogo_list%}
+      <li> id: {{ jogo.id }}  </li>
+      <li> desenvolvedora (empresa):  {{ jogo.empresa }} </li>
+      <li> nome: {{ jogo.nome }} </li>
+      <li> preço: {{ jogo.preco }} </li>
+      <li> descrição: {{ jogo.desc }} </li>
+      <li> foto: {{ jogo.foto }} </li>
+      <li> data de lançamento: {{ jogo.data_lancamento }} </li>
+      <button> <a href=" {% url 'atualizarJogo' pk=jogo.pk %}"> atualizar </a></button>
+      <button> <a href=" {% url 'deletarJogo'  pk=jogo.pk %}"> deletar </a></button>
+
+     
+    {% endfor %}
+    {% endif %}
+   
+  </ul> 
+  <button> <a href=" {% url 'adicionarJogo' %}"> adicionar </a></button>
+
+</body>
+</html>

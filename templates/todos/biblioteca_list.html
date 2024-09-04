@@ -1,0 +1,31 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="{% static 'style.css' %}">
+  <title>Cactus - Viva o Jogo</title>
+
+</head>
+
+<body>
+  <h1> biblioteca </h1>
+  <ul>
+    {% if biblioteca_list|length != 0 %}
+      {% for biblioteca in biblioteca_list  %}
+          <li> {{biblioteca.id }}</li>
+          <li> {{biblioteca.id_jogo }} </li>
+          <li> {{biblioteca.id_user }} </li>
+          <button> <a href=" {% url 'atualizarBiblio' pk=biblioteca.pk %}"> atualizar </a></button>
+          <button> <a href=" {% url 'deletarBiblio'  pk=biblioteca.pk %}"> deletar </a></button>
+      {% endfor %}
+    {% else %}
+      <p>Sua biblioteca está vazia</p>
+    {% endif%}
+    </ul>
+</body>
+</html>
