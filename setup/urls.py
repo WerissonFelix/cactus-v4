@@ -23,16 +23,17 @@ from todos.views import *
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path("", home, name='home'),
+    path("", adm, name='admPagina'),
+    path("Principal", home, name='home'),
     path("details/", details, name='details'),
     path("streams/", streams, name='streams'),
     path("browse/", browse, name='browse'),
     path("profile/", profile, name='profile'),
-    path("", TodoListView.as_view(), name = 'listarEmpresas'),
-    path("create", TodoCreateView.as_view(), name= 'adicionarEmpresas'),
+    path("empresasListar", TodoListView.as_view(), name = 'listarEmpresas'),
+    path("empresaAdicionar", TodoCreateView.as_view(), name= 'adicionarEmpresas'),
     path("update/<int:pk>", TodoUpdateView.as_view(), name='atualizarEmpresas'),
     path("delete/<int:pk>", TodoDeleteView.as_view(), name='deletarEmpresas'),
-    path("jogoListar", Selctjogo.as_view(), name = 'listarJogo'),
+    path("jogoListar/<int:pk>", Selctjogo.as_view(), name = 'listarJogo'),
     path("jogoAdicionar", InsertJogos.as_view(), name = 'adicionarJogo'),
     path("updatejogo/<int:pk>", UpdateJogo.as_view(), name= 'atualizarJogo'),
     path("deletejogo/<int:pk>", DeleteJogo.as_view(), name='deletarJogo'),
@@ -45,6 +46,3 @@ urlpatterns = [
     path("updateBiblio/<int:pk>", UpdateBiblioteca.as_view(), name='atualizarBiblio'),
     path("deleteBiblio/<int:pk>", DeleteBiblioteca.as_view(), name='deletarBiblio'),
 ]
-
-
-urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
