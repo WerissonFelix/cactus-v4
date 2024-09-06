@@ -23,7 +23,7 @@
       <div class="imagemlegal">
         <img src="{% static "imagens/cactuslogo-removebg-preview.png" %}">
       </div>
-      {% if jogos.pk %}
+      {% if jogo.pk %}
         <h1> Editar tarefa </h1>
 
         <form method="POST" id="cadastro-jogo" >
@@ -43,10 +43,11 @@
             {{ form|crispy }}
             <div id="button-holder">
               <button class="btn btn-primary">Cadastrar</button> 
+             
             </div>
           </form>
       {% endif %}
-        
+  
     </div>
 </body>
 </html>

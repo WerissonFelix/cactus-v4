@@ -26,7 +26,6 @@
         <li> desc:{{ empresa.desc }} </li>
         <button> <a href=" {% url 'atualizarEmpresas' pk=empresa.pk %}"> atualizar </a></button>
         <button> <a href=" {% url 'deletarEmpresas' pk=empresa.pk %}"> deletar </a></button>
-        <button> <a href=" {% url 'listarJogo' pk=empresa.pk%}"> vê jogos </a></button>
       {% endfor %}
   </ul>
 
