@@ -72,16 +72,16 @@ class Selctjogo(ListView):
 class InsertJogos(CreateView):
     model = jogo
     fields = ["id","empresa","nome", "preco", "desc", "data_lancamento"]
-    success_url = reverse_lazy("listarEmpresas")
+    success_url = reverse_lazy("listarJogo")
 
 class UpdateJogo(UpdateView):
     model = jogo
     fields = ["id","empresa","nome", "preco", "desc", "data_lancamento"]
-    success_url = reverse_lazy("listarEmpresas")
+    success_url = reverse_lazy("listarJogo")
     
 class DeleteJogo(DeleteView):
     model = jogo
-    success_url = reverse_lazy("listarEmpresas")
+    success_url = reverse_lazy("listarJogo")
 
 # ------ CRUD DE USUÁRIO -------
 
