@@ -1,0 +1,25 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="{% static 'style.css' %}">
+  <title>Cactus - Viva o Jogo</title>
+
+</head>
+
+<body>
+  <h1> EMPRESA <h1>
+  <button> <a href=" {% url 'listarEmpresas' %}"> Vê todas as informações de todas empresas cadastradas </a></button>
+  <h1> USER </h1>
+  <button> <a href=" {% url 'listarUser' %}"> Vê todas as informações de todos users cadastrados </a></button>
+  <h1> JOGO </h1>
+  <button> <a href=" {% url 'listarJogo' %}"> Vê todas as informações de todos os jogos cadastrados</a></button>
+  <h1> HOME </h1> 
+  <button> <a href=" {% url 'home' %}"> voltar para a página principal </a></button>
+</body>
+</html>
